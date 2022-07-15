@@ -1,0 +1,134 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap');
+
+body { font-family:'Noto Sans KR', Dodum, Verdana, Tahoma, sans-serif; font-size: 12px;}
+a { color:#111; }
+
+/* header 위에 항상 고정이지만 스크롤 내릴때마다 나오지는 않음 */
+header { position:absolute; top:0; left:0; width:100%; height:4.2vw; min-height:80px; border-bottom:1px solid #d8d8d8; z-index: 50; }
+    /*  height:4.2vw; min-height:80px; 일정 크기로 화면이 축소되면 height 크기 고정 */
+.header_in { max-width: 1920px; margin:auto; height:100%; border:2px solid red; }
+    /* 위에 height가 고정되어 있으니 100%로 적용해도 된다. 기준이 되는 relative우선 넣었다가 .gnb_wrap 끝정렬 안되서 지움 */
+header h1 { display:flex; align-items:center;  width:172px; height:100px; margin-left:5vw; }
+header h1 a { display:inline-block; width:172px; height:100%; background:url('../img/toplogo_w.png') no-repeat center center / contain; text-indent:-9999px; }
+    /* 모든 이미지가 알아서 줄어들게 지정 center center 가로세로 중앙/ contain 잘리지않고 알아서 크기 조절 cover 알아서 크기 조절인데 화면이 잘릴수 있음 */
+
+.gnb_wrap { position: absolute; height: 100%; top: 0; left:0; width:100%; height:100%; display:flex; justify-content: flex-end; border:2px solid orange; }
+    /* display:flex; justify-content: flex-end 오른쪽 제일 끝에 배치하는데 header_in에 relative적용해놓으면 여백이 생겨있다 지우면 완전 끝으로 이동됨 */
+
+.gnb_list_w { height: 100%; }
+.gnb_list { display:table; height: 100%; padding-right:2vw; }/* 안해도 상관은 없음 */
+.gnb_list > li { display: table-cell; height: 100%; padding: 0 37px; position: relative; }
+    /* table-cell 옆으로 놓는 용도 테이블에서 tr역할 padding: 0 1.95vw폰트크기의 2배 */
+.mitem { display:flex; font-size: 16px; align-items: center; height: 100%; color:#fff; }
+
+.subItem_w { display:none; position: absolute; top:100%; left:0; width: 100%; background: #fff; border-top:1px solid #d8d8d8; box-shadow: 10px 10px 10px rgb(0 0 0 / 20%); text-align: center; } /* 바로 위에 있는 li가 기준 rgb(0 0 0 / 10%) 웹 표준 기준에 어긋남 */
+.subItem_list { padding: 20px 0; }
+.subItem_list > li { margin-bottom: 10px; }
+.subItem { font-size:15px; }
+.subItem:hover { color:#00a8de; }
+
+.subItem_w:before { position: absolute; content:""; width: 9px; height: 9px; background: #00a8de; border-radius: 50%; margin-top:-5.5px; }
+
+/* pc상태 메인메뉴 hover */
+.gnb_list > li:hover .subItem_w { display: block; }
+
+.national_list { height: 101%; width: 11%; }
+.nat_target { display:flex; align-items:center; justify-content: center; height:100%; width:100%; background: #334a51; position: relative; }
+.nat_target_in { font-size: 14px; font-family: 'Merriweather', serif; color:#fff; }
+    /* display */
+
+
+.totalmenu_w { height:101%; width:11%; }
+a.btn_total { display:flex; align-items:center; height:100%; width:100%; background: #fff; position: relative; padding-left:50%; }
+/* 아리쏭하면 앞에 a태그 써주고 가운데 놓기 위해서 display:flex 사용함 .gnb_wrap 100%했으니 %로 해도 됨 padding-left:50% 사이트를 늘리든 줄이든 글씨가 가로 가운데로 온다 */
+.btn_total:before, .btn_total:after { position: absolute; content: ""; width:27%; height:1px; left:12%; top:50%; background: #111; } 
+.btn_total:before { transform: translateY(-7px); }
+.btn_total:after { transform: translateY(7px); }
+/* 기준은 a.btn_total에다가 지정 */
+
+.btn_total_in { font-size: 16px; font-family: 'Merriweather', serif; color:#111; }
+.btn_total:before { transform: translateY(-5px); }
+.btn_total:after { transform: translateY(5px); }
+
+/* total_menu_z */
+.total_menu_z {}
+
+
+
+
+/* fullpage */
+.fullpage {}
+
+#s1 { position: relative; }
+.video_w {}
+.video_w video { 
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    background-color: black; /* in case the video doesn't fit the whole page*/
+    background-image: /* our video */;
+    background-position: center center;
+    background-size: contain;
+    object-fit: cover; /*cover video background */
+    z-index:3; } /* 동영상부분 */
+
+
+.s1_w { position:relative; border:2px solid red; z-index:5; color:#fff; padding: 50px 0 0 12vw; }
+.s1_main { font-size:3.8vw; font-weight:700; font-family:'Merriweather', serif; line-height:1.25; letter-spacing:-1.8px; }
+.s1_w span { display:block; font-size:4.8vw; }
+.s1_sub { font-size:1.5vw; margin-top:15px; }
+
+.s1_sns { position:absolute; bottom:50px; left:6vw; z-index:5; }
+.s1_sns ul { }
+.s1_sns li { margin-bottom:25px; }
+.s1_sns li a { width:25px; height:25px; display:inline-block; background: no-repeat 0 0 / cover; text-indent:-9999px; }
+.s1_sns li:nth-child(1) a { background-image:url('../img/total_blog.png'); }
+.s1_sns li:nth-child(2) a { background-image:url('../img/total_insta.png'); }
+.s1_sns li:nth-child(3) a { background-image:url('../img/total_youtube.png'); }
+.s1_sns li:nth-child(4) a { background-image:url('../img/total_face.png'); }
+
+
+
+#s2 { position:relative; background:#EBE7E4; min-height:475px; }
+.s2_bg { position:absolute; top:0; right:0; bottom:0; width:30%; background:#95aaa3; }
+.s2_img { position:absolute; top:0; right:20%; height:100%; width:25%; display:flex; align-items:center; }
+
+.s2_w { position:relative; margin:0 13vw; z-index:5;
+    border:2px solid Black}
+.s2_in { border:2px solid red }
+
+.s2_title_w {}
+    .s2_title { max-width:45%; }
+    .s2_title_sub { font-size:1.7vw; color:#27352b; font-weight:700; margin-top:26px;}
+
+.s2_cont { margin-top:70px; }
+    .s2_item_title { font-size:1vw; color:#3c4940; font-weight:700; }
+    .s2_item_cont { font-size:0.85vw; margin-top:40px; }
+
+    .s2_list { display:table; text-align:left; }
+    .s2_list > li { display:table-cell; padding-right:70px; vertical-align:top;}
+
+    .s2_item { text-align:center; }
+    .s2_item:before { display:block; content:''; width:90px; height:90px; background:url('../img/mc_eff_m.png') no-repeat 0 0 / cover;   }
+    .s2_item p { margin-top:15px; }
+
+    .s2_item01:before { background-position:0 0; }
+    .s2_item02:before { background-position:0 -90px; }
+    .s2_item03:before { background-position:0 -180px; }
+    .s2_item04:before { background-position:0 -270px; }
+
+#s3 { position: relative; background: url('../img/mc_geda_bg_pc.png') no-repeat 50% 50% / cover;  z-index: 3; }
+
+
+
+
+
+
+

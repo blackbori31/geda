@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+/* 1921px보다(포함) 컷을때  */
+@media (min-width:1921px){
+    /** header **/
+    header h1 {  }
+
+    .gnb_list > li { padding: 0 1.95vw; }
+    /* padding 계산 : 1920*0.0195 */
+    .mitem { font-size: 0.83vw; }
+    .subItem_list > li { margin-bottom: 0.52vw; }
+    .subItem { font-size:0.8vw; }
+
+    .nat_target_in { font-size: 0.83vw; }
+    .btn_total_in { font-size: 0.83vw; }
+
+    /* section */
+    .s1_sns { bottom:100px; left:7vw; }
+    .s1_sns li { margin-bottom:50px; }
+    .s1_sns li a { width:32px; height:32px; }
+    
+    .s2_title { max-width:335px; }
+    .s2_cont { margin-top:100px; }
+
+    .s2_list > li { display:table-cell; padding-right:100px;}
+    .s2_item:before { width:120px; height:120px;  }
+
+    .s2_item02:before { background-position:0 -120px; }
+    .s2_item03:before { background-position:0 -240px; }
+    .s2_item04:before { background-position:0 -360px; }
+}
+
+
+@media (max-width:1679px){
+    .s2_bg { width:20%; }
+    .s2_img { right:7%; }
+    .s2_title_sub { font-size:2.3vw; }
+    .s2_item_title { font-size:1.8vw; }
+    .s2_item_cont { font-size:1.3vw; margin-top:40px; }
+}
+
+
+@media (max-width:1279px){
+    .gnb_list > li { padding: 0 37px; }
+}
+    .subItem_w { width: calc(100% + 30px); margin-left:-15px; }
+
+
+
+/* header의 gnb_list가 사라지는 포인트 영역 브레이크포인트 */
+@media (max-width:1023px){
+    .pc { display:none; }
+    .mobile { display:block; }
+
+    /** header **/
+    header { height:55px;  min-height:auto; }
+    header h1 { margin-left:30px; height:55px; }
+    header h1 a { width:90px; }
+
+    .gnb_list_w { display: none; }
+    .national_list { width: 20%; }
+    .totalmenu_w { width:20%; }
+    .btn_total:before, .btn_total:after { width: 30px; left:50%; top:50%; margin-left:-15px; } 
+    /* 가로 30고정 왼쪽에서 위에서 가운데 인데 살짝 중앙이 아니라서 margin-left -15넣음 */
+    .btn_total_in { display:none; }
+
+    /* section */
+    .s1_main { font-size:35px; }
+    .s1_w span { font-size:45px;}
+    .s1_sub { font-size:15px; }
+
+
+    .s1_sns ul { display:table;}
+    .s1_sns li { display:table-cell; margin-bottom:0; padding:0 8px }
+    .s1_sns li a { width:20px; height:20px; }
+    
+    .s2_w { position:relative; margin:0 30px; }
+    .s2_bg { bottom:auto; width:100%; height:367px; }
+
+    .s2_title_w {}   
+    .s2_title { max-width:200px; }
+    .s2_title_sub { font-size:25px; margin:10px 0 20px; }
+    .s2_topImg img { max-width:50%; }
+
+    .s2_cont { margin-top:30px; }
+    .s2_item_title { font-size:16px;  }
+    .s2_item_cont { font-size:14px; margin-top:15px; font-weight:300; }
+    
+    #s3 { background: url('../img/mc_geda_bg_pc.png') no-repeat 50% 50% / cover; }
+
+
+}
+
+
+@media ( max-width:767px ){
+    .s2_topImg img { max-width:100%; }
+
+}
